@@ -64,10 +64,6 @@ export default class Subjects extends Vue {
 }
 </script>
 <style lang="scss" scoped>
-.subjects-list__container {
-  padding: 20px 0;
-}
-
 .subjects__header {
   display: flex;
   align-items: center;
