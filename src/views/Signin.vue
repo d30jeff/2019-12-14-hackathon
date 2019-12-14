@@ -74,6 +74,7 @@ export default class Signin extends Vue {
     padding: 40px;
     max-width: 600px;
     margin: 100px auto 100px auto;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
   }
 }
 </style>
