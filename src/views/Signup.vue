@@ -7,35 +7,40 @@
         <div class="field">
           <label class="label">NRIC Number</label>
           <div class="control">
-            <input class="input" type="text" placeholder="NRIC Number" />
+            <input class="input" type="text" placeholder="NRIC Number" v-model="icNumber" />
           </div>
         </div>
 
         <div class="field">
           <label class="label">Phone Number</label>
           <div class="control">
-            <input class="input" type="text" placeholder="e.g. 0123456789" value="" />
+            <input class="input" type="text" placeholder="e.g. 0123456789" v-model="phoneNumber" />
           </div>
         </div>
 
         <div class="field">
           <label class="label">Password</label>
           <div class="control">
-            <input class="input" type="password" placeholder="Password" value="" />
+            <input class="input" type="password" placeholder="Password" v-model="password" />
           </div>
         </div>
 
         <div class="field">
           <label class="label">Confirm Password</label>
           <div class="control">
-            <input class="input" type="password" placeholder="Confirm Password" value="" />
+            <input
+              class="input"
+              type="password"
+              placeholder="Confirm Password"
+              v-model="confirmPassword"
+            />
           </div>
         </div>
 
         <div class="field">
           <div class="control">
             <label class="checkbox">
-              <input type="checkbox" />
+              <input type="checkbox" :checked="true" />
               I agree to the <a href="#">terms and conditions</a>
             </label>
           </div>
@@ -60,6 +65,8 @@ import { Component } from 'vue-property-decorator';
 import PublicPage from '@/components/layouts/PublicPage.vue';
 import { Carousel, Slide } from 'vue-carousel';
 
+let data: any = {};
+
 @Component({
   components: {
     PublicPage,
@@ -68,6 +75,43 @@ import { Carousel, Slide } from 'vue-carousel';
   },
 })
 export default class Signup extends Vue {
+  icNumber = '';
+  phoneNumber = '';
+  password = '';
+  confirmPassword = '';
+
+  mounted() {
+    data = {
+      icNumber: '951214-12-1234',
+      phoneNumber: '+60123456789',
+      password: 'password123456',
+      confirmPassword: 'password123456',
+    };
+  }
+
+  beforeCreate() {
+    setTimeout(() => {
+      this.incrementData('icNumber');
+      this.incrementData('phoneNumber');
+      this.incrementData('password');
+      this.incrementData('confirmPassword');
+    }, 100);
+  }
+
+  incrementData(key: string) {
+    if ((this as any)[key] === data[key]) {
+      return;
+    }
+    (this as any)[key] += data[key].slice(0, 1);
+    data[key] = data[key].substr(1);
+
+    if (data[key].length) {
+      setTimeout(() => {
+        this.incrementData(key);
+      }, 100);
+    }
+  }
+
   handleFormSubmitted() {
     this.$router.push({
       name: 'signin',
@@ -84,7 +128,7 @@ export default class Signup extends Vue {
     padding: 40px;
     max-width: 600px;
     margin: 50px auto 50px auto;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
   }
 }
 </style>
