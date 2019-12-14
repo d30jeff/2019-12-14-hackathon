@@ -4,52 +4,52 @@
       <h1>Sign up for a new account</h1>
       <hr />
       <form @submit.prevent="handleFormSubmitted">
-      <div class="field">
-        <label class="label">IC Number</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Text input" />
+        <div class="field">
+          <label class="label">NRIC Number</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="NRIC Number" />
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label">Phone Number</label>
-        <div class="control">
-          <input class="input is-success" type="text" placeholder="Text input" value="" />
+        <div class="field">
+          <label class="label">Phone Number</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="e.g. 0123456789" value="" />
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label">Password</label>
-        <div class="control">
-          <input class="input is-success" type="text" placeholder="Text input" value="" />
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="Password" value="" />
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label">Confirm Password</label>
-        <div class="control">
-          <input class="input is-success" type="text" placeholder="Text input" value="" />
+        <div class="field">
+          <label class="label">Confirm Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="Confirm Password" value="" />
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <div class="control">
-          <label class="checkbox">
-            <input type="checkbox" />
-            I agree to the <a href="#">terms and conditions</a>
-          </label>
+        <div class="field">
+          <div class="control">
+            <label class="checkbox">
+              <input type="checkbox" />
+              I agree to the <a href="#">terms and conditions</a>
+            </label>
+          </div>
         </div>
-      </div>
 
+        <div class="field">
+          <div class="control">
+            <button type="submit" class="button is-link is-fullwidth">Sign up</button>
+          </div>
+        </div>
 
-      <div class="field is-grouped">
-        <div class="control">
-          <button type="submit" class="button is-link">Sign up</button>
+        <div class="field has-text-centered">
+          <a href="#">Forgot Password?</a>
         </div>
-        <div class="control">
-          <button type="button" class="button is-link is-light">Reset</button>
-        </div>
-      </div>
       </form>
     </div>
   </PublicPage>
@@ -68,13 +68,11 @@ import { Carousel, Slide } from 'vue-carousel';
   },
 })
 export default class Signup extends Vue {
-
   handleFormSubmitted() {
     this.$router.push({
-      name: 'signin'
-    })
+      name: 'signin',
+    });
   }
-
 }
 </script>
 <style lang="scss" scoped>

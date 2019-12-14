@@ -7,24 +7,33 @@
         <div class="field">
           <label class="label">IC Number</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Please enter your IC number" />
+            <input
+              class="input"
+              type="text"
+              placeholder="Please enter your IC number"
+              v-model="icNumber"
+            />
           </div>
         </div>
 
         <div class="field">
           <label class="label">Password</label>
           <div class="control">
-            <input class="input is-success" type="text" placeholder="Password" value="" />
+            <input class="input" type="password" placeholder="Password" v-model="password" />
           </div>
         </div>
 
-        <div class="field is-grouped">
+        <div class="field">
           <div class="control">
-            <button class="button is-link is-fullwidth">Login</button>
+            <button class="button is-link is-fullwidth" :disabled="isLoginButtonDisabled">
+              Login
+            </button>
           </div>
         </div>
+        <div class="field has-text-centered">
+          <a href="#">Forgot Password?</a>
+        </div>
       </form>
-      <a href="#">Forgot Password?</a>
     </div>
   </PublicPage>
 </template>
@@ -42,9 +51,16 @@ import { Carousel, Slide } from 'vue-carousel';
   },
 })
 export default class Signin extends Vue {
+  icNumber = '';
+  password = '';
+
+  get isLoginButtonDisabled(): boolean {
+    return this.icNumber.trim().length === 0 || this.password.trim().length < 6;
+  }
+
   handleFormSubmitted() {
     this.$router.push({
-      name: 'syllabus',
+      name: 'subjects',
     });
   }
 }
