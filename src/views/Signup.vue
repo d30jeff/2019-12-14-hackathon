@@ -83,7 +83,8 @@ export default class Signup extends Vue {
     margin-top: 140px;
     padding: 40px;
     max-width: 600px;
-    margin: 100px auto 100px auto;
+    margin: 50px auto 50px auto;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
   }
 }
 </style>

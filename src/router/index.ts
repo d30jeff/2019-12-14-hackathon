@@ -59,6 +59,24 @@ const routes = [
       title: 'Syllabus',
     },
   },
+  {
+    path: '/forum',
+    name: 'forum',
+    component: () => import('@/views/Forum.vue'),
+    meta: {
+      isPublic: true,
+      title: 'Forum',
+    },
+  },
+  {
+    path: '/my-reviews',
+    name: 'my.reviews',
+    component: () => import('@/views/MyReviews.vue'),
+    meta: {
+      isPublic: true,
+      title: 'My Reviews',
+    },
+  },
 ];
 
 const instance = new VueRouter({

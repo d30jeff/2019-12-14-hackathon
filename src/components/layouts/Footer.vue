@@ -2,7 +2,10 @@
   <div class="footer__container">
     <div class="footer__body"></div>
     <div class="footer__copyright">
-      <p>2019 C Company Sdn Bhd. All rights reserved.</p>
+      <p>Sabah EduHACK 14 & 15 December 2019</p>
+      <a class="instagram" href="https://www.instagram.com/explore/tags/sabaheduhack2019/?hl=en" target="_blank">
+        <img src="@/assets/instagram.png" alt="Instagram">
+      </a>
     </div>
   </div>
 </template>
@@ -29,8 +32,18 @@ export default class Footer extends Vue {}
     padding: $padding-small;
     position: absolute;
     bottom: 0;
-    height: 40px;
     width: 100%;
+    a.instagram {
+      margin-left: 20px;
+      height: 28px;
+      width: 28px;
+      img {
+        object-fit: contain;
+        border-radius: 3px;
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 }
 </style>

@@ -3,7 +3,11 @@
     <div class="subjects__container">
       <h1>Subjects</h1>
       <hr />
-      <LevelFilter @onSelect="handleLevelSelected($event)" />
+      <div class="subjects__header">
+        <LevelFilter @onSelect="handleLevelSelected($event)" />
+        <h4>{{ total }}</h4>
+      </div>
+
       <div class="subjects-list__container">
         <SubjectsListContainer :subjects="tableSubjects" />
       </div>
@@ -38,6 +42,15 @@ export default class Subjects extends Vue {
     return this.subjects
   }
 
+  get total() {
+    const count = this.subjects.length;
+
+    if (count) {
+      return `Showing ${count} Subjects`
+    }
+    return '';
+  }
+
   handleLevelSelected(level: number) {
     console.log({ level })
     if (Number(level) === 0) {
@@ -53,5 +66,11 @@ export default class Subjects extends Vue {
 <style lang="scss" scoped>
 .subjects-list__container {
   padding: 20px 0;
+}
+
+.subjects__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>

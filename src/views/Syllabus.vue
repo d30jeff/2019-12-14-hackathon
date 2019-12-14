@@ -1,7 +1,8 @@
 <template>
   <Page>
     <div class="syllabus__container">
-      <h1>{{ subjectName }} - Syllabus</h1>
+      <h1>{{ subjectName }}</h1>
+      <h2 class="subtitle">Syllabus</h2>
       <hr />
     </div>
   </Page>
@@ -23,9 +24,15 @@ import { subjects } from '../datasource/subjects';
   },
 })
 export default class Syllabus extends Vue {
+  get subjectId(): number {
+    const id = this.$route.params.id;
+
+    return Number(id);
+  }
+
   get subjectName(): string {
     const subject = subjects.find(subject => {
-      return subject.id === Number(this.$route.params.id);
+      return subject.id === this.subjectId;
     })
 
     if (subject) {

@@ -51,8 +51,23 @@ import { Carousel, Slide } from 'vue-carousel';
   },
 })
 export default class Signin extends Vue {
-  icNumber = '';
+  icNumber = '951214-12-1234';
   password = '';
+
+  incrementPasswordLength() {
+    if (this.password.length === 10) {
+      return;
+    }
+
+    this.password += Math.floor(Math.random()).toString();
+    setTimeout(() => {
+      this.incrementPasswordLength();
+    }, 200);
+  }
+
+  mounted() {
+    this.incrementPasswordLength();
+  }
 
   get isLoginButtonDisabled(): boolean {
     return this.icNumber.trim().length === 0 || this.password.trim().length < 6;
@@ -74,6 +89,7 @@ export default class Signin extends Vue {
     padding: 40px;
     max-width: 600px;
     margin: 100px auto 100px auto;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
   }
 }
 </style>

@@ -3,19 +3,19 @@
     <div class="home__container">
       <carousel :perPage="1">
         <slide>
-          <img src="@/assets/1.jpg" alt="">
+          <img src="@/assets/1.jpg" alt="1" />
         </slide>
         <slide>
-          <img src="@/assets/2.jpg" alt="">
+          <img src="@/assets/2.jpg" alt="2" />
         </slide>
         <slide>
-          <img src="@/assets/3.jpg" alt="">
+          <img src="@/assets/3.jpg" alt="3" />
         </slide>
         <slide>
-          <img src="@/assets/4.jpg" alt="">
+          <img src="@/assets/4.jpg" alt="4" />
         </slide>
         <slide>
-          <img src="@/assets/5.jpg" alt="">
+          <img src="@/assets/5.jpg" alt="5" />
         </slide>
       </carousel>
     </div>
