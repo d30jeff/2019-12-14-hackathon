@@ -62,11 +62,10 @@ export default class SubjectsListContainer extends Vue {
     display: flex;
     flex-direction: column;
     padding: 8px;
-    border: 1px solid $blue;
     margin-bottom: 20px;
     border-radius: 3px;
     padding: 20px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     &--header {
       display: flex;
       justify-content: space-between;
