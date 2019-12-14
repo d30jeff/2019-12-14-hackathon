@@ -28,80 +28,35 @@ const routes = [
     name: 'signup',
     component: () => import('@/views/Signup.vue'),
     meta: {
-      isPublic: true
-    }
+      isPublic: true,
+      title: 'Sign Up Today',
+    },
   },
   {
     path: '/signin',
     name: 'signin',
     component: () => import('@/views/Signin.vue'),
     meta: {
-      isPublic: true
-    }
+      isPublic: true,
+      title: 'Login To Start',
+    },
   },
   {
-    path: '/syllabus',
+    path: '/subjects',
+    name: 'subjects',
+    component: () => import('@/views/Subjects.vue'),
+    meta: {
+      isPublic: true,
+      title: 'Subjects',
+    },
+  },
+  {
+    path: '/subjects/:id/syllabus',
     name: 'syllabus',
     component: () => import('@/views/Syllabus.vue'),
     meta: {
-      isPublic: true
-    }
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('@/views/About/About.vue'),
-    meta: {
       isPublic: true,
-      title: 'About Page',
-      metaTags: [
-        {
-          name: 'This is the description of about page',
-          content: 'About page',
-        },
-        {
-          property: 'og:description',
-          content: 'About page',
-        },
-      ],
-    },
-  },
-  {
-    path: '/services',
-    name: 'services',
-    component: () => import('@/views/Services/Services.vue'),
-    meta: {
-      isPublic: true,
-      title: 'Services Page',
-      metaTags: [
-        {
-          name: 'description',
-          content: 'The about page of our example app.',
-        },
-        {
-          property: 'og:description',
-          content: 'The about page of our example app.',
-        },
-      ],
-    },
-  },
-  {
-    path: '/our-locations',
-    name: 'our.locations',
-    component: () => import('@/views/OurLocations/OurLocations.vue'),
-    meta: {
-      isPublic: true,
-      title: 'Our Locations Page',
-      metaTags: [
-        {
-          name: 'description',
-          content: 'The about page of our example app.',
-        },
-        {
-          property: 'og:description',
-          content: 'The about page of our example app.',
-        },
-      ],
+      title: 'Syllabus',
     },
   },
 ];
@@ -112,7 +67,7 @@ const instance = new VueRouter({
     return {
       x: 0,
       y: 0,
-    }
+    };
   },
   base: process.env.BASE_URL,
   linkActiveClass: 'active',
@@ -121,7 +76,7 @@ const instance = new VueRouter({
 });
 
 instance.beforeEach((to, from, next) => {
-  document.title = to.meta.title || 'Website Template';
+  document.title = to.meta.title || 'Education System';
 
   Array.from(document.querySelectorAll('[data-vue-router-controlled]')).forEach((el: any) => {
     el.parentNode.removeChild(el);
