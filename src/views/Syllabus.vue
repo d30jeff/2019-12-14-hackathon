@@ -96,5 +96,10 @@ export default class Syllabus extends Vue {
     margin-bottom: 10px;
     font-weight: 600;
   }
+  &--table {
+    table.table.is-fullwidth > tbody > tr > td {
+      width: 100%;
+    }
+  }
 }
 </style>
