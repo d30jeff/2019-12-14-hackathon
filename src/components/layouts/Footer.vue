@@ -3,7 +3,7 @@
     <div class="footer__body"></div>
     <div class="footer__copyright">
       <p>Sabah EduHACK 14 & 15 December 2019</p>
-      <a class="instagram" href="https://www.instagram.com/explore/tags/sabaheduhack/?hl=en" target="_blank">
+      <a class="instagram" href="https://www.instagram.com/explore/tags/sabaheduhack2019/?hl=en" target="_blank">
         <img src="@/assets/instagram.png" alt="Instagram">
       </a>
     </div>
