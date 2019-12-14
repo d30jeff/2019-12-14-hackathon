@@ -1,8 +1,8 @@
 <template>
   <div class="sidenav__container">
-    <router-link :to="{ name: 'syllabus' }">Syllabus</router-link>
-    <router-link :to="{ name: 'my.reviews' }">My Reviews</router-link>
-    <router-link :to="{ name: 'forum' }">Forum</router-link>
+    <router-link :to="{ name: 'subjects' }" >Subjects</router-link>
+    <router-link :to="{ name: 'my.reviews' }" exact>My Reviews</router-link>
+    <router-link :to="{ name: 'forum' }" exact>Forum</router-link>
   </div>
 </template>
 <script lang="ts">
@@ -32,6 +32,7 @@ export default class Page extends Vue {}
       padding: 20px 20px;
       font-size: 14px;
       color: $yellow;
+      &.active,
       &:hover {
         background: $yellow;
         color: $blue;
