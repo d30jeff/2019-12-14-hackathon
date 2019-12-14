@@ -4,9 +4,13 @@
       <div class="subject">
         <div class="subject--header">
           <h3>{{ subject.name }}</h3>
+          <div class="subject--rating">
+            <VueStarRating :rating="getRandomRating()" read-only
+            :star-size="30"/>
+          </div>
         </div>
         <div class="subject--description">
-          {{ description }}
+          <p>{{ description }}</p>
         </div>
         <div class="subject--footer">
           <router-link
@@ -31,18 +35,24 @@ import Page from '@/components/layouts/Page.vue';
 import { Subject } from '@/models/subject';
 import { subjects } from '@/datasource/subjects';
 import faker from 'faker';
+import VueStarRating from 'vue-star-rating';
 
 @Component({
   components: {
     Page,
+    VueStarRating
   },
 })
 export default class SubjectsListContainer extends Vue {
   @Prop({})
   private subjects!: Subject[];
 
+  getRandomRating() {
+    return Math.floor(Math.random() * 5 + 1);
+  }
+
   get description() {
-    return faker.lorem.paragraph(1);
+    return faker.lorem.paragraph(3);
   }
 }
 </script>
@@ -58,6 +68,8 @@ export default class SubjectsListContainer extends Vue {
     padding: 20px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
     &--header {
+      display: flex;
+      justify-content: space-between;
     }
     &--description {
       padding-bottom: 40px;
