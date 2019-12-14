@@ -6,7 +6,9 @@ export interface Syllabus {
 
 let syllabusGeneratedId = 400;
 
-export const syllabus = {
+export const syllabus: {
+  [key: number]: any
+} = {
   100: {
     'Tahun 1': [
       { title: 'Keluarga Penyayang' },
