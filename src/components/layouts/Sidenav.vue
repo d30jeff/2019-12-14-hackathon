@@ -22,7 +22,7 @@ export default class Page extends Vue {}
 .sidenav {
   &__container {
     text-transform: uppercase;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);

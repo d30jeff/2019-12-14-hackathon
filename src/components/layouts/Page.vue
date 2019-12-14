@@ -50,6 +50,6 @@ export default class Page extends Vue {}
   display: flex;
   flex-direction: column;
   width: 200px;
-  height: 100vh;
+  min-height: 100vh;
 }
 </style>
