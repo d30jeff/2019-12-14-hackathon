@@ -2,7 +2,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <router-link :to="{ name: 'home' }" class="navbar-item">
-        LOGO
+        <img src="@/assets/logo.svg" alt="Logo" />
       </router-link>
       <a
         role="button"
