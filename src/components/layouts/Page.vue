@@ -4,7 +4,7 @@
       <Navbar :areButtonsHidden="true" />
     </div>
 
-    <div class="page__body" :class="{ padded: hasPadding }">
+    <div class="page__body" :class="{ padded: false }">
       <div class="page__sidebar">
         <Sidenav />
       </div>

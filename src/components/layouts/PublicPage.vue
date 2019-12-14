@@ -26,7 +26,8 @@ import Footer from '@/components/layouts/Footer.vue';
 export default class PublicPage extends Vue {
   @Prop({
     type: Boolean,
-    default: false
+    default: false,
+    required: false
   })
   private hasPadding: boolean | undefined;
 }
