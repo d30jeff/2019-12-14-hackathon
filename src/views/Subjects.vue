@@ -68,5 +68,6 @@ export default class Subjects extends Vue {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 </style>
